@@ -6,6 +6,9 @@ require "./functions/authentification.php";
 $title = "accueil";
 $nav = "accueil";
 
+if (!is_connected()) {
+    header("Location: login.php");
+}
 
 $user = $_SESSION['auth'];
 
