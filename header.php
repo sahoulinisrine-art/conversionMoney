@@ -85,8 +85,8 @@
           <a class="nav-link text-muted <?php if ($nav === 'accueil') echo 'active font-weight-bold text-dark'; ?>"
               href="./accueil.php">Accueil</a>
 
-          <a class="nav-link text-muted <?php if ($nav === 'contact') echo 'active font-weight-bold text-dark'; ?>"
-              href="./contact.php">Contact</a>
+          <a class="nav-link text-muted <?php if ($nav === 'comparatif') echo 'active font-weight-bold text-dark'; ?>"
+              href="./comparatif.php">Comparatif</a>
 
           <!-- calculatrice -->
           <?php if (is_connected()): ?>
