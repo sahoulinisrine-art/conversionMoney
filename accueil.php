@@ -17,7 +17,7 @@ require "header.php";
 <center>
     <h2>Accueil</h2
      <p>Bonjour <?= $user['firstname'] ?> <?= $user['lastname'] ?></p>
-     <p>Convertissez de devises facilement grâce à notre site utilisant PHP.</p>
+     <p>Convertissez des devises facilement grâce à notre site utilisant PHP.</p>
 
     <img src="./images/headercurrency.png" alt="headerCurrency" height="350px" width="940px">
 

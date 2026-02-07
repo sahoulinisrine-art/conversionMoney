@@ -1,8 +1,10 @@
-  <!doctype html>
+<?php
+ require_once __DIR__ . '/functions/authentification.php';
+ ?>
+ <!doctype html>
   <html lang="fr">
-  <?php
-    require_once "./functions/authentification.php";
-    ?>
+
+ 
 
   <head>
       <meta charset="utf-8">
@@ -83,15 +85,15 @@
 
       <nav class="nav d-flex justify-content-center py-2 mb-3">
           <a class="nav-link text-muted <?php if ($nav === 'accueil') echo 'active font-weight-bold text-dark'; ?>"
-              href="./accueil.php">Accueil</a>
+              href="/PHP/conversionMoney/accueil.php">Accueil</a>
 
-          <a class="nav-link text-muted <?php if ($nav === 'contact') echo 'active font-weight-bold text-dark'; ?>"
-              href="./contact.php">Contact</a>
+          <a class="nav-link text-muted <?php if ($nav === 'comparatif') echo 'active font-weight-bold text-dark'; ?>"
+              href="/PHP/conversionMoney/comparatif.php">Comparatif</a>
 
           <!-- calculatrice -->
           <?php if (is_connected()): ?>
               <a class="nav-link text-muted <?php if ($nav === 'profil') echo 'active font-weight-bold text-dark'; ?>"
-                  href="./monProfil.php">Mon Profil</a>
+                  href="/PHP/conversionMoney/monProfil.php">Mon Profil</a>
               <div class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-muted font-weight-bold"
                       href="#"
@@ -104,12 +106,12 @@
                   </a>
 
                   <div class="dropdown-menu text-center" aria-labelledby="calcDropdown">
-                      <a class="dropdown-item" href="./euroDollars.php">Euro / Dollars</a>
-                      <a class="dropdown-item" href="./euroYen.php">Euro / Yen</a>
-                      <a class="dropdown-item" href="./euroPounds.php">Euro / Pounds</a>
-                      <a class="dropdown-item" href="./euroFrancsRDC.php">Euro / FrancsRDC</a>
-                      <a class="dropdown-item" href="./euroDirham.php">Euro / Dirham</a>
-                      <a class="dropdown-item" href="./euroYuan.php">Euro / Yuan</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroDollars.php">Euro / Dollars</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroYen.php">Euro / Yen</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroPounds.php">Euro / Pounds</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroFrancsRDC.php">Euro / FrancsRDC</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroDirham.php">Euro / Dirham</a>
+                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroYuan.php">Euro / Yuan</a>
                   </div>
               </div>
           <?php endif; ?>
