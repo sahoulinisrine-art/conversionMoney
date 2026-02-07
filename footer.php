@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-<div class="container">
+<div class="containerF">
 
     <footer class="py-3 mb-4 text-center">
 
@@ -11,14 +11,14 @@
             <li class="nav-item"><a href="./accueil.php" class="nav-link px-2 text-muted">Accueil</a></li>
             <li class="nav-item"><a href="./comparatif.php" class="nav-link px-2 text-muted">Comparatif</a></li>
 
-            <?php if (!is_connected()): ?>
+            <?php if (is_connected()): ?>
                 <li class="nav-item"><a href="./monProfil.php" class="nav-link px-2 text-muted">Mon Profil</a></li>
                 <li class="nav-item">
-                    <a class="nav-link px-2 text-muted" href="./login.php">Login</a>
+                    <a class="nav-link px-2 text-muted" href="./logout.php">Logout</a>
                 </li>
             <?php else : ?>
                 <li class="nav-item">
-                    <a class="nav-link px-2 text-muted" href="./logout.php">Logout</a>
+                    <a class="nav-link px-2 text-muted" href="./login.php">Login</a>
                 </li>
             <?php endif; ?>
         </ul>

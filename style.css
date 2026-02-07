@@ -1,0 +1,431 @@
+/* ====================================
+   STILI GLOBALI
+   ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* ====================================
+   PLACEHOLDER e MEDIA QUERIES
+   ==================================== */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.blog-logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/* ====================================
+   CONTAINER
+   ==================================== */
+
+.container .containerF {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+
+
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #000000 !important;
+}
+
+.navbar-brand img {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: #000000 !important;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.my-4{
+    margin: 1.5rem 0;
+}
+
+.comparatif-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+/* ====================================
+   PAGINA ACCUEIL (HOME)
+   ==================================== */
+
+.page-hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1f2d3d;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.page-hero img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* ====================================
+   FORM CONTAINER
+   ==================================== */
+
+.form-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ====================================
+   PAGINA MON PROFIL
+   ==================================== */
+
+.content {
+    margin-left: 250px;
+}
+
+.data {
+    border: 1.5px solid black;
+    padding: 20px;
+    margin: 40px;
+    width: 300px;
+    background-color: lightgrey;
+    border-radius: 8px;
+}
+
+.data h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.data p {
+    margin: 8px 0;
+}
+
+.data img {
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 120px;
+    height: auto;
+}
+.history-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.history-section h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: bold;
+}
+
+.table {
+    background-color: white;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* ====================================
+   PAGINA COMPARATIF - TABELLE
+   ==================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eaeaea;
+    text-align: left;
+}
+
+th {
+    background: #1f2d3d;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:hover {
+    background: #f0f6ff;
+}
+
+/* ====================================
+   BADGE COLORI
+   ==================================== */
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.fort {
+    background: #27ae60;
+}
+
+.stable {
+    background: #2980b9;
+}
+
+.emergent {
+    background: #e67e22;
+}
+
+/* ====================================
+   PAGINE DI CONVERSIONE
+   ==================================== */
+
+.conversion-container {
+    max-width: 400px;
+    margin-top: 10%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.conversion-container h1 {
+    text-align: center;
+
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
+}
+
+button {
+    background: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #1f618d;
+}
+
+button:active {
+    background: #1a4d70;
+}
+
+.result {
+    text-align: center;
+    font-size: 18px;
+    color: #27ae60;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0fff4;
+    border-left: 4px solid #27ae60;
+    border-radius: 4px;
+}
+
+/* ====================================
+   NOTE E TESTO
+   ==================================== */
+
+.note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 3px solid #2980b9;
+    border-radius: 4px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2d3d;
+}
+
+h2 {
+    color: #1f2d3d;
+    margin: 20px 0 15px 0;
+}
+
+h3 {
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+}
+
+/* ====================================
+   CENTRO
+   ==================================== */
+
+center {
+    display: block;
+    text-align: center;
+}
+
+center h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+center p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+center img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* ====================================
+   ALERT
+   ==================================== */
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .conversion-container {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+
+    .data {
+        margin: 20px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .conversion-container h1 {
+        font-size: 1.5rem;
+    }
+
+    button, input {
+        font-size: 14px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+}

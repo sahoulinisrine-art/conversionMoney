@@ -2,8 +2,8 @@
 session_start();
 $title= "conversion USD";
 $nav = "conversion";
-require "../functions/functionConvert.php";
-require "../header.php";
+require "./functions/functionConvert.php";
+require "./header.php";
 $euro = $usd = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
