@@ -49,7 +49,7 @@ include 'header.php';
         <p>Nom : <strong><?= $user['lastname']; ?></strong></p>
         <p>Prénom : <strong><?= $user['firstname']; ?></strong></p>
         <p>Pseudo : <strong><?= $user['login']; ?></strong></p>
-
+        <p>Rôle : <?= $user['role'] ?></p>
        
         <p>Mon code : <strong><?= $user['password']; ?></strong></p>
 
