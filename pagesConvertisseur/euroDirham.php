@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../functions/functionConvert.php";
-require "..//header.php";
+require "../secondfile/header.php";
 $euro = $mad = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
