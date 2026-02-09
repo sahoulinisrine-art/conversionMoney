@@ -17,7 +17,7 @@ $users = [
     ],
     [
         'firstname' => 'Stefania',
-        'lastname'  => 'Italiana',
+        'lastname'  => 'Rocca',
         'login'     => 'stef',
         'password'  => 12345,
         'role'      => 'user'
@@ -55,16 +55,14 @@ require "header.php";
 <?php if ($erreur): ?>
     <div class="alert alert-danger"><?= $erreur ?></div>
 <?php endif; ?>
-<center>
-<h1>Login</h1>
 
-<form method="POST">
-    <input type="text" name="login" placeholder="Login">
-    <br>
-    <input type="password" name="password" placeholder="Mot de passe">
-    <br>
-    <button type="submit">Connexion</button>
-</form>
-</center>
+<div class="form-container">
+    <h1>Login</h1>
+    <form method="POST">
+        <input type="text" name="login" placeholder="Login">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <button type="submit">Connexion</button>
+    </form>
+</div>
 <?php require "footer.php"; ?>
 

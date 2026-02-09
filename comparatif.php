@@ -1,8 +1,8 @@
 <?php
 session_start();
-$title = "comparatif";
+$title = "Comparatif";
 $nav = "comparatif";
-require "header.php";
+require "./header.php";
 
 ?>
 
@@ -53,57 +53,8 @@ $devises = [
 ];
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Taux des devises par rapport à l’euro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            padding: 40px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #ffffff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-        th, td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        th {
-            background: #1f2d3d;
-            color: #fff;
-        }
-        tr:hover {
-            background: #f0f6ff;
-        }
-        .badge {
-            padding: 5px 10px;
-            border-radius: 12px;
-            color: white;
-            font-size: 12px;
-        }
-        .fort { background: #27ae60; }
-        .stable { background: #2980b9; }
-        .emergent { background: #e67e22; }
-        .note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-<div class="my-4" style="max-width: 900px; margin: 0 auto; padding: 20px;">
-<h1>Taux de devises par rapport à l’euro</h1>
+<div class="comparatif-container">
+<h1>Taux de devises par rapport à l'euro</h1>
 
 <table>
     <tr>
@@ -133,11 +84,5 @@ $devises = [
     généralement plus stables. Les devises des pays émergents peuvent varier davantage.
 </p>
 </div>
-</body>
-</html>
 
-    <?php
-
-    require "footer.php";
-
-    ?>
+<?php require "footer.php"; ?>

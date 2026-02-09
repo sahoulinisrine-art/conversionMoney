@@ -1,6 +1,8 @@
 <?php
- require_once __DIR__ . '/functions/authentification.php';
- ?>
+if (!function_exists('is_connected')) {
+    require_once __DIR__ . '/functions/authentification.php';
+}
+?>
  <!doctype html>
   <html lang="fr">
 
@@ -24,100 +26,78 @@
       </title>
 
 
-      <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
+      <link rel="canonical" href="http://localhost<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
       <!-- Bootstrap core CSS -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-      <style>
-          .bd-placeholder-img {
-              font-size: 1.125rem;
-              text-anchor: middle;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-          }
-
-          body {
-              background-color: #f2f2f2;
-          }
-
-          .container {
-              margin: 40px auto;
-              width: 70%;
-              background: white;
-              padding: 20px;
-              border-radius: 10px;
-          }
-
-          @media (min-width: 768px) {
-              .bd-placeholder-img-lg {
-                  font-size: 3.5rem;
-              }
-          }
-      </style>
-
-      <!-- Custom styles for this template -->
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-      <!-- Custom styles for this template -->
-      <link href="blog.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="./style.css">
   </head>
-
-  <div class="container">
-      <header class="blog-header py-3 border-bottom text-center">
-          <a class="blog-header-logo text-dark" href="#" style="font-size: 2rem; font-weight: bold;">
-              MON PHP
-          </a>
-
-          <ul class="navbar-nav mr-auto">
-              <?php if (!is_connected()): ?>
-                  <li class="nav-item <?php if ($nav === "login"): ?> active <?php endif ?>">
-                      <a class="nav-link" href="./login.php">Login</a>
-                  </li>
-              <?php else : ?>
-                  <li class="nav-item">
-                      <a class="nav-link" href="./logout.php">Logout</a>
-                  </li>
-              <?php endif; ?>
-          </ul>
-      </header>
-
-      <nav class="nav d-flex justify-content-center py-2 mb-3">
-          <a class="nav-link text-muted <?php if ($nav === 'accueil') echo 'active font-weight-bold text-dark'; ?>"
-              href="/PHP/conversionMoney/accueil.php">Accueil</a>
-
-          <a class="nav-link text-muted <?php if ($nav === 'comparatif') echo 'active font-weight-bold text-dark'; ?>"
-              href="/PHP/conversionMoney/comparatif.php">Comparatif</a>
-
-          <!-- calculatrice -->
-          <?php if (is_connected()): ?>
-              <a class="nav-link text-muted <?php if ($nav === 'profil') echo 'active font-weight-bold text-dark'; ?>"
-                  href="/PHP/conversionMoney/monProfil.php">Mon Profil</a>
-              <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-muted font-weight-bold"
-                      href="#"
-                      id="calcDropdown"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      Conversion
-                  </a>
-
-                  <div class="dropdown-menu text-center" aria-labelledby="calcDropdown">
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroDollars.php">Euro / Dollars</a>
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroYen.php">Euro / Yen</a>
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroPounds.php">Euro / Pounds</a>
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroFrancsRDC.php">Euro / FrancsRDC</a>
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroDirham.php">Euro / Dirham</a>
-                      <a class="dropdown-item" href="/PHP/conversionMoney/pagesConvertisseur/euroYuan.php">Euro / Yuan</a>
-                  </div>
-              </div>
-          <?php endif; ?>
-
-          <!-- fin -->
+ <body>
 
 
-      </nav>
-  </div>
+ <div class="container">
+  <nav class="navbar navbar-light navbar-expand-sm">
+    
+    <a class="navbar-brand" href="./accueil.php">
+        <img src="./images/images.jpg" alt="Logo">
+        Conversion Monétaire
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item <?php if ($nav === 'accueil'): ?> active <?php endif ?>">
+                <a class="nav-link" href="./accueil.php">Accueil</a>
+            </li>
+            
+            <li class="nav-item <?php if ($nav === 'comparatif'): ?> active <?php endif ?>">
+                <a class="nav-link" href="./comparatif.php">Comparatif</a>
+            </li>
+
+            <?php if (is_connected()): ?>
+                <li class="nav-item <?php if ($nav === 'profil'): ?> active <?php endif ?>">
+                    <a class="nav-link" href="./monProfil.php">Mon Profil</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" 
+                       href="#" 
+                       id="calcDropdown" 
+                       role="button" 
+                       data-toggle="dropdown" 
+                       aria-haspopup="true" 
+                       aria-expanded="false">
+                        Conversion
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="calcDropdown">
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroDollars.php">Euro / Dollars</a>
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroYen.php">Euro / Yen</a>
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroPounds.php">Euro / Pounds</a>
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroFrancsRDC.php">Euro / FrancsRDC</a>
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroDirham.php">Euro / Dirham</a>
+                        <a class="dropdown-item" href="./pagesConvertisseur/euroYuan.php">Euro / Yuan</a>
+                    </div>
+                </li>
+            <?php endif; ?>
+        </ul>
+
+        <ul class="navbar-nav">
+            <?php if (!is_connected()): ?>
+                <li class="nav-item <?php if ($nav === 'login'): ?> active <?php endif ?>">
+                    <a class="nav-link" href="./login.php">Login</a>
+                </li>
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="./logout.php">Logout</a>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+    </div>
+</nav>
+ </body>
