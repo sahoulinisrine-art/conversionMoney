@@ -1,12 +1,13 @@
 <?php
 session_start();
-$title= "conversion";
+$title = "conversion";
 $nav = "conversion";
-require "./functions/functionConvert.php";
-require "./header.php";
-; // ton fichier avec les fonctions euroToUSD(), euroToJPY(), etc.
+require '../functions/functionConvert.php';
+require_once __DIR__ . '/../header.php';
 
-// Sauvegarde des taux en session pour réutilisation
+
+
+// Initialisation des taux
 if (!isset($_SESSION['taux'])) {
     $_SESSION['taux'] = [
         'USD' => 1.08,
@@ -18,10 +19,10 @@ if (!isset($_SESSION['taux'])) {
     ];
 }
 
-// Devise choisie via paramètre GET, par défaut USD (ternaire)
-$devise = isset($_GET['devise']) ? $_GET['devise'] : 'USD';
+// Devise choisie
+$devise = $_GET['devise'] ?? 'USD';
 
-// Tableau associatif pour choisir la fonction
+// Table des fonctions
 $fonctions = [
     'USD' => 'euroToUSD',
     'JPY' => 'euroToJPY',
@@ -31,55 +32,51 @@ $fonctions = [
     'CNY' => 'euroToCNY'
 ];
 
-// Fonction à utiliser pour Euro -> Devise
-$convertEuroFunc = isset($fonctions[$devise]) ? $fonctions[$devise] : 'euroToUSD';
+$convertEuroFunc = $fonctions[$devise] ?? 'euroToUSD';
 
-// Variables pour les formulaires
 $euro = $montant = "";
 
-// Traitement du formulaire
+// Traitement
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Euro -> Devise
+
     if (!empty($_POST['euro'])) {
-        $euro = $_POST['euro'];
-        $montant = $convertEuroFunc($euro); // utilise la fonction existante
-    } 
-    // Devise -> Euro
-    elseif (!empty($_POST['devise'])) {
-        $montant = $_POST['devise'];
-        $taux = $_SESSION['taux'][$devise]; // récupérer le taux
-        $euro = $montant / $taux; // conversion inverse simple
+        $euro = floatval($_POST['euro']);
+        $montant = $convertEuroFunc($euro);
+    } elseif (!empty($_POST['devise'])) {
+        $montant = floatval($_POST['devise']);
+        $taux = $_SESSION['taux'][$devise];
+        $euro = $montant / $taux;
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Conversion Euro ↔ <?= $devise ?></title>
 </head>
+
 <body>
-    <div class="conversion-container"">
+    <div class="conversion-container">
         <h1>Conversion Euro ↔ <?= $devise ?></h1>
 
-        <!-- Formulaire Euro -> Devise -->
         <form method="POST">
             <input type="number" step="0.01" name="euro" placeholder="Montant en €" value="<?= $euro ?>">
             <button type="submit">Convertir € → <?= $devise ?></button>
         </form>
 
-        <!-- Formulaire Devise -> Euro -->
         <form method="POST">
             <input type="number" step="0.01" name="devise" placeholder="Montant en <?= $devise ?>" value="<?= $montant ?>">
             <button type="submit">Convertir <?= $devise ?> → €</button>
         </form>
 
-        <?php if($euro !== "" || $montant !== ""): ?>
+        <?php if ($euro !== "" || $montant !== ""): ?>
             <div class="result">
                 Euro = <?= $euro ?> € | <?= $devise ?> = <?= $montant ?>
             </div>
         <?php endif; ?>
     </div>
 </body>
+
 </html>

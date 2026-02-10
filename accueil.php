@@ -1,10 +1,10 @@
 <?php
 session_start();
-
-require "./functions/authentification.php";
-
 $title = "accueil";
 $nav = "accueil";
+require "./functions/authentification.php";
+
+
 
 if (!is_connected()) {
     header("Location: login.php");

@@ -1,45 +1,4 @@
-/* ====================================
-   STILI GLOBALI
-   ==================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-}
-
-/* ====================================
-   PLACEHOLDER e MEDIA QUERIES
-   ==================================== */
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.blog-logo {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
 
 /* ====================================
    CONTAINER
@@ -50,8 +9,6 @@ body {
     background: white;
     border-radius: 10px;
 }
-
-
 
 
 .navbar {
@@ -217,7 +174,7 @@ tr:hover {
    BADGE COLORI
    ==================================== */
 
-.badge {
+   .badge {
     padding: 5px 10px;
     border-radius: 12px;
     color: white;
@@ -236,70 +193,9 @@ tr:hover {
 
 .emergent {
     background: #e67e22;
-}
+} 
 
-/* ====================================
-   PAGINE DI CONVERSIONE
-   ==================================== */
 
-.conversion-container {
-    max-width: 400px;
-    margin-top: 10%;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.conversion-container h1 {
-    text-align: center;
-
-    margin-bottom: 20px;
-    color: #333;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input:focus {
-    outline: none;
-    border-color: #2980b9;
-    box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
-}
-
-button {
-    background: #2980b9;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #1f618d;
-}
-
-button:active {
-    background: #1a4d70;
-}
-
-.result {
-    text-align: center;
-    font-size: 18px;
-    color: #27ae60;
-    margin-top: 20px;
-    padding: 15px;
-    background: #f0fff4;
-    border-left: 4px solid #27ae60;
-    border-radius: 4px;
-}
 
 /* ====================================
    NOTE E TESTO
@@ -331,30 +227,7 @@ h3 {
     margin: 15px 0 10px 0;
 }
 
-/* ====================================
-   CENTRO
-   ==================================== */
 
-center {
-    display: block;
-    text-align: center;
-}
-
-center h2 {
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
-center p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-center img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-}
 
 /* ====================================
    ALERT
@@ -377,7 +250,7 @@ center img {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
-}
+} 
 
 /* ====================================
    RESPONSIVE
@@ -428,4 +301,4 @@ center img {
     .result {
         font-size: 16px;
     }
-}
+} 

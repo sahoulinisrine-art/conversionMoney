@@ -4,6 +4,10 @@ $title = "Comparatif";
 $nav = "comparatif";
 require "./header.php";
 
+
+
+
+
 ?>
 
 <?php
